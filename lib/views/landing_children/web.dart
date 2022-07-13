@@ -37,40 +37,57 @@ class WebView extends StatelessWidget {
                     painter: SemiCirclePainter(
                       color: Colors.red,
                     ),
-                    size: const Size(550, 550),
+                    size: const Size(750, 750),
                   ),
                 ),
               ),
               Positioned(
-                bottom: 0,
-                right: 30,
+                top: -120,
+                right: 210,
                 child: Container(
-                  width: 450,
-                  height: 700,
-                  color: Colors.transparent,
+                  width: 250,
+                  height: 250,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: RadialGradient(
+                      colors: [
+                        Colors.green.shade300,
+                        Colors.green.shade700,
+                      ],
+                    ),
+                  ),
                 ),
               ),
               Positioned(
                 top: 130,
-                left: 260,
+                right: 650,
                 child: Container(
                   width: 150,
                   height: 150,
                   decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Colors.purple.shade600,
-                          Colors.purple.shade300
-                        ],
-                      ),
-                      shape: BoxShape.circle,
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.purple,
-                          offset: Offset(3, 3),
-                          blurRadius: 7,
-                        )
-                      ]),
+                    gradient: RadialGradient(
+                      colors: [
+                        Colors.blue.shade300,
+                        Colors.blue.shade700,
+                      ],
+                    ),
+                    shape: BoxShape.circle,
+                    // boxShadow: const [
+                    //   BoxShadow(
+                    //     color: Colors.blue,
+                    //     offset: Offset(3, 3),
+                    //     blurRadius: 7,
+                    //   )
+                    // ],
+                  ),
+                ),
+              ),
+              Positioned(
+                right: 50,
+                bottom: 0,
+                child: Image.network(
+                  "https://pngimg.com/uploads/thinking_man/thinking_man_PNG11606.png",
+                  height: 750,
                 ),
               ),
               Positioned(
@@ -109,53 +126,57 @@ class WebView extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "I am a Mobile developer for ${DateTime.now().difference(DateTime(2019, 6, 7)).inDays ~/ 365} years, I can do HYBRID Mobile Applications\nand can do also do Fullstack Web Development.",
+                        "I am a Mobile developer for ${DateTime.now().difference(DateTime(2019, 6, 7)).inDays ~/ 365} years, I can do HYBRID Mobile Applications\nand can also do Fullstack Web Development.",
                         style: TextStyle(
                           color: black.withOpacity(.8),
                           fontSize: 20,
                         ),
                       ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "Mastered\nTechnologies",
+                            style: TextStyle(
+                              color: black,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 25,
+                              height: 1,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          SizedBox(
+                            width: width * .7,
+                            height: 50,
+                            child: ListView.separated(
+                              physics: const NeverScrollableScrollPhysics(),
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (_, index) => Image.asset(
+                                "assets/images/${pl[index]}.png",
+                                height: 50,
+                                fit: BoxFit.fitHeight,
+                              ),
+                              separatorBuilder: (_, index) => const SizedBox(
+                                width: 20,
+                              ),
+                              itemCount: pl.length,
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),
               ),
-              Positioned(
-                bottom: 250,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "Mastered\nTechnologies",
-                      style: TextStyle(
-                        color: black,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 25,
-                        height: 1,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    SizedBox(
-                      width: width * .7,
-                      height: 50,
-                      child: ListView.separated(
-                        physics: const NeverScrollableScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (_, index) => Image.asset(
-                          "assets/images/${pl[index]}.png",
-                          height: 50,
-                          fit: BoxFit.fitHeight,
-                        ),
-                        separatorBuilder: (_, index) => const SizedBox(
-                          width: 20,
-                        ),
-                        itemCount: pl.length,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // Positioned(
+              //   bottom: 250,
+              //   child: ,
+              // ),
               Positioned(
                 bottom: 40,
                 child: SizedBox(

@@ -7,7 +7,7 @@ class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
   static final List<String> _tabs = [
     "HOME",
-    "CONTACT",
+    "ABOUT ME",
     "MY PORTFOLIO",
   ];
   @override
@@ -130,7 +130,7 @@ class LandingPage extends StatelessWidget {
                       ),
                       Expanded(
                         child: AnimatedSwitcher(
-                          duration: const Duration(milliseconds: 400),
+                          duration: const Duration(milliseconds: 100),
                           child: cWidth <= 800
                               ? const MobileView()
                               : const WebView(),
