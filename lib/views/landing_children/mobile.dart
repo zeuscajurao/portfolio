@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:zeuscajurao/app/config.dart';
+import 'package:zeuscajurao/global/constants.dart';
 
 class MobileView extends StatelessWidget {
   const MobileView({Key? key}) : super(key: key);
-  static final List<String> pl = [
-    "dart",
-    "php",
-    "python",
-    "java",
-  ];
-  static final List<String> icons = [
-    "assets/icons/instagram.png",
-    "assets/icons/facebook.png",
-    "assets/icons/linkedin.png",
-  ];
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -133,7 +125,7 @@ class MobileView extends StatelessWidget {
                                 height: 30,
                               ),
                               Text(
-                                "It's nice seeing you here checking my profile",
+                                "It's nice seeing you here checking my profile!",
                                 style: TextStyle(
                                   color: black.withOpacity(.8),
                                   fontSize: 20,
@@ -192,12 +184,16 @@ class MobileView extends StatelessWidget {
                     ),
                     SizedBox(
                       height: 60,
-                      width: 180,
+                      width: 300,
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (_, index) => IconButton(
                           padding: const EdgeInsets.all(0),
-                          onPressed: () {},
+                          onPressed: () async {
+                            if (await canLaunchUrl(Uri.parse(links[index]))) {
+                              await launchUrl(Uri.parse(links[index]));
+                            }
+                          },
                           icon: Center(
                             child: Image.asset(
                               icons[index],
