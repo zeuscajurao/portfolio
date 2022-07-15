@@ -34,7 +34,7 @@ class WebView extends StatelessWidget {
                       children: [
                         Positioned(
                           left: 30,
-                          top: 90,
+                          bottom: 90,
                           child: Image.asset(
                             "assets/images/iPad.png",
                             height: 750,
