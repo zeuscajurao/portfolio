@@ -33,101 +33,28 @@ class WebView extends StatelessWidget {
                       alignment: Alignment.center,
                       children: [
                         Positioned(
-                          // right: 150,
-                          // top: (height * .5) - 250,
-                          child: ShaderMask(
-                            shaderCallback: (Rect bound) => RadialGradient(
-                              colors: [
-                                Colors.red.shade400,
-                                Colors.red.shade900,
-                              ],
-                            ).createShader(bound),
-                            child: Container(
-                              width: 550,
-                              height: 550,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          right: 160,
-                          top: 60,
-                          // bottom: (height * .5) - 360,
-                          child: Container(
-                            width: 220,
-                            height: 220,
-                            decoration: BoxDecoration(
-                              gradient: RadialGradient(
-                                colors: [
-                                  Colors.blue.shade400,
-                                  Colors.blue.shade900,
-                                ],
-                              ),
-                              shape: BoxShape.circle,
-                              boxShadow: const [
-                                BoxShadow(color: white, spreadRadius: 10)
-                              ],
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 10,
-                          top: 180,
-                          // bottom: (height * .5) - 360,
-                          child: Container(
-                            width: 270,
-                            height: 270,
-                            decoration: BoxDecoration(
-                              gradient: RadialGradient(
-                                colors: [
-                                  Colors.green.shade400,
-                                  Colors.green.shade900,
-                                ],
-                              ),
-                              boxShadow: const [
-                                BoxShadow(
-                                  color: white,
-                                  spreadRadius: 10,
-                                )
-                              ],
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          right: 300,
-                          top: 50,
+                          left: 30,
+                          top: 90,
                           child: Image.asset(
-                            "assets/images/iphone.png",
-                            height: 520,
+                            "assets/images/iPad.png",
+                            height: 750,
                           ),
                         ),
                         Positioned(
-                          bottom: 100,
-                          left: 0,
+                          // top: 30,
+                          right: 210,
+                          bottom: 20,
                           child: Image.asset(
-                            "assets/images/desktop.png",
-                            height: 400,
+                            "assets/images/iPhone2.png",
+                            height: 600,
                           ),
                         ),
                         Positioned(
-                          top: 120,
-                          right: -150,
+                          right: 30,
+                          bottom: 90,
                           child: Image.asset(
-                            "assets/images/android-phone.png",
-                            height: 520,
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 40,
-                          right: 0,
-                          child: Image.asset(
-                            "assets/images/macbook.png",
-                            height: 300,
+                            "assets/images/iPhone1.png",
+                            height: 700,
                           ),
                         ),
                       ],
@@ -165,7 +92,7 @@ class WebView extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      "< Software Developer >",
+                      "< Software Engineer >",
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         color: black.withOpacity(.5),
@@ -191,7 +118,7 @@ class WebView extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      "Mobile - Web - Desktop App Development",
+                      "Mobile - Web - Desktop\nApp Development",
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         color: black.withOpacity(.7),
