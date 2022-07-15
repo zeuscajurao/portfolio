@@ -16,7 +16,7 @@ class ZeusCajurao extends StatelessWidget {
           color: black,
         ),
         primarySwatch: Colors.blue,
-        fontFamily: "QuickSand",
+        fontFamily: "Alumni",
       ),
       home: const LandingPage(),
     );
