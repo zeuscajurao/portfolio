@@ -1,6 +1,6 @@
 # zeuscajurao
 
-A new Flutter project.
+A personal website that contains info about my journey as a software developer.
 
 ## Getting Started
 
