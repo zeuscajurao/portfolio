@@ -7,18 +7,27 @@ class ZeusCajurao extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Zeus Cajurao',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        backgroundColor: white,
-        iconTheme: const IconThemeData(
-          color: black,
-        ),
-        primarySwatch: Colors.blue,
-        fontFamily: "Alumni",
+    return ConstrainedBox(
+      constraints: const BoxConstraints(
+        minHeight: 850,
       ),
-      home: const LandingPage(),
+      child: MaterialApp(
+        title: 'Zeus Cajurao',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          backgroundColor: dark,
+          iconTheme: const IconThemeData(
+            color: white,
+          ),
+          fontFamily: "Alumni",
+          colorScheme:
+              ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(
+            secondary: accent,
+            primary: primary,
+          ),
+        ),
+        home: const LandingPage(),
+      ),
     );
   }
 }
