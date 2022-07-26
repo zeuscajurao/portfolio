@@ -62,7 +62,7 @@ class Services extends StatelessWidget {
                   height: 145,
                 ),
                 AnimatedFadeWidget(
-                  slideFrom: const Offset(2, 0),
+                  slideFrom: const Offset(-1, 0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -99,7 +99,7 @@ class Services extends StatelessWidget {
                         for (int i = 0; i < offers.length; i++) ...{
                           AnimatedFadeWidget(
                             duration: Duration(milliseconds: 500 + (i * 100)),
-                            slideFrom: Offset(0, -(i + 1).toDouble()),
+                            slideFrom: Offset(-(i + 1).toDouble(), 0),
                             child: SizedBox(
                               width: 350,
                               height: 430,
@@ -151,10 +151,8 @@ class Services extends StatelessWidget {
                                         AnimatedFadeWidget(
                                           duration: Duration(
                                               milliseconds: 700 + (i * 100)),
-                                          slideFrom: Offset(
-                                            0,
-                                            (i + 1).toDouble(),
-                                          ),
+                                          slideFrom:
+                                              Offset((i + 1).toDouble(), 0),
                                           child: Container(
                                             width: ccwd,
                                             height: 180,

@@ -64,7 +64,7 @@ class LandingPage extends StatelessWidget {
                           return Row(
                             children: [
                               Image.asset(
-                                "assets/images/n_logo.png",
+                                "assets/images/logo.png",
                               ),
                               const Spacer(),
                               Container(
@@ -143,7 +143,7 @@ class LandingPage extends StatelessWidget {
                   //         left: 10,
                   //         right: 10,
                   // child: Image.asset(
-                  //   "assets/images/n_logo.png",
+                  //   "assets/images/logo.png",
                   // ),
                   //       ),
                   //     ],
@@ -223,7 +223,7 @@ class LandingPage extends StatelessWidget {
 //                   child: width <= 800
 //                       ? AppBar(
 //                           title: Image.asset(
-//                             "assets/images/n_logo.png",
+//                             "assets/images/logo.png",
 //                             height: 50,
 //                           ),
 //                           centerTitle: false,
@@ -273,7 +273,7 @@ class LandingPage extends StatelessWidget {
 //                               left: 10,
 //                               right: 10,
 //                               child: Image.asset(
-//                                 "assets/images/n_logo.png",
+//                                 "assets/images/logo.png",
 //                               ),
 //                             ),
 //                           ],

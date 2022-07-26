@@ -87,141 +87,45 @@ class HomePage extends StatelessWidget {
       builder: (_, constraint) {
         final double width = constraint.maxWidth;
         final double height = constraint.maxHeight;
-        return Column(
+        return Stack(
           children: [
-            Container(
-              color: light,
-              width: width,
-              height: 700,
-              padding: EdgeInsets.symmetric(
-                horizontal: width <= 800 ? 30 : width * .1,
-              ),
-              child: Stack(
-                children: [
-                  if (width >= 775) ...{
-                    Positioned(
-                      top: 250,
-                      right: 0,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          intro(false),
-                          const SizedBox(
-                            height: 40,
-                          ),
-                          AnimatedFadeWidget(
-                            duration: const Duration(
-                              milliseconds: 750,
-                            ),
-                            slideFrom: const Offset(1, 0),
-                            child: Text(
-                              "Turning your innovative ideas into reality.\nSolving your real-world problems via digital solutions!",
-                              style: TextStyle(
-                                color: Colors.grey.shade400,
-                                fontSize: 19,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          AnimatedFadeWidget(
-                            duration: const Duration(
-                              milliseconds: 750,
-                            ),
-                            slideFrom: const Offset(2.5, 0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                border: Border.all(
-                                  color: accent,
-                                  width: 2,
-                                ),
-                              ),
-                              child: MaterialButton(
-                                onPressed: () async {
-                                  await hire();
-                                },
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
-                                child: const Center(
-                                  child: Text(
-                                    "Hire me",
-                                    style: TextStyle(
-                                      color: accent,
-                                      fontSize: 17,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          AnimatedFadeWidget(
-                            duration: const Duration(
-                              milliseconds: 760,
-                            ),
-                            slideFrom: const Offset(1.5, 0),
-                            child: Text(
-                              "And let us work together\nas a team"
-                                  .toUpperCase(),
-                              style: TextStyle(
-                                color: Colors.grey.shade300,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  },
-                  Positioned(
-                    top: 250,
-                    child: AnimatedFadeWidget(
-                      slideFrom: const Offset(-1, 0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            "ZEUS NICOLE",
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              color: white,
-                              fontWeight: FontWeight.w800,
-                              fontSize: 90,
-                              height: .75,
-                            ),
-                          ),
-                          const Text(
-                            "CAJURAO",
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              color: accent,
-                              fontWeight: FontWeight.w800,
-                              fontSize: 95,
-                              height: .75,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            width: 60,
-                            height: 5,
-                            decoration: const BoxDecoration(
-                              color: accent,
-                            ),
-                          ),
-                          if (width < 775) ...{
+            Positioned(
+              top: 0,
+              child: Container(
+                color: light,
+                width: width,
+                height: 700,
+                padding: EdgeInsets.symmetric(
+                  horizontal: width <= 800 ? 30 : width * .1,
+                ),
+                child: Stack(
+                  children: [
+                    if (width >= 775) ...{
+                      Positioned(
+                        top: 250,
+                        right: 0,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            intro(false),
                             const SizedBox(
                               height: 40,
                             ),
-                            intro(true),
+                            AnimatedFadeWidget(
+                              duration: const Duration(
+                                milliseconds: 750,
+                              ),
+                              slideFrom: const Offset(1, 0),
+                              child: Text(
+                                "Turning your innovative ideas into reality.\nSolving your real-world problems via digital solutions!",
+                                style: TextStyle(
+                                  color: Colors.grey.shade400,
+                                  fontSize: 19,
+                                ),
+                              ),
+                            ),
                             const SizedBox(
-                              height: 10,
+                              height: 20,
                             ),
                             AnimatedFadeWidget(
                               duration: const Duration(
@@ -232,7 +136,7 @@ class HomePage extends StatelessWidget {
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
                                   border: Border.all(
-                                    color: Colors.white,
+                                    color: accent,
                                     width: 2,
                                   ),
                                 ),
@@ -247,7 +151,7 @@ class HomePage extends StatelessWidget {
                                     child: Text(
                                       "Hire me",
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: accent,
                                         fontSize: 17,
                                       ),
                                     ),
@@ -256,384 +160,897 @@ class HomePage extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(
-                              height: 30,
+                              height: 10,
                             ),
-                          } else ...{
+                            AnimatedFadeWidget(
+                              duration: const Duration(
+                                milliseconds: 760,
+                              ),
+                              slideFrom: const Offset(1.5, 0),
+                              child: Text(
+                                "And let us work together\nas a team"
+                                    .toUpperCase(),
+                                style: TextStyle(
+                                  color: Colors.grey.shade300,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    },
+                    Positioned(
+                      top: 250,
+                      child: AnimatedFadeWidget(
+                        slideFrom: const Offset(-1, 0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "ZEUS NICOLE",
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                color: white,
+                                fontWeight: FontWeight.w800,
+                                fontSize: 90,
+                                height: .75,
+                              ),
+                            ),
+                            const Text(
+                              "CAJURAO",
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                color: accent,
+                                fontWeight: FontWeight.w800,
+                                fontSize: 95,
+                                height: .75,
+                              ),
+                            ),
                             const SizedBox(
-                              height: 60,
+                              height: 10,
                             ),
-                          },
-                          SizedBox(
-                            height: 60,
-                            width: 400,
-                            child: Center(
-                              child: ListView.separated(
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (_, index) => AnimatedFadeWidget(
-                                  duration: Duration(
-                                      milliseconds: 500 + ((index + 1) * 100)),
-                                  slideFrom: Offset(-(index).toDouble(), -1),
-                                  child: IconButton(
-                                    padding: const EdgeInsets.all(0),
+                            Container(
+                              width: 60,
+                              height: 5,
+                              decoration: const BoxDecoration(
+                                color: accent,
+                              ),
+                            ),
+                            if (width < 775) ...{
+                              const SizedBox(
+                                height: 40,
+                              ),
+                              intro(true),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              AnimatedFadeWidget(
+                                duration: const Duration(
+                                  milliseconds: 750,
+                                ),
+                                slideFrom: const Offset(2.5, 0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50),
+                                    border: Border.all(
+                                      color: Colors.white,
+                                      width: 2,
+                                    ),
+                                  ),
+                                  child: MaterialButton(
                                     onPressed: () async {
-                                      if (await canLaunchUrl(
-                                          Uri.parse(links[index]))) {
-                                        await launchUrl(
-                                            Uri.parse(links[index]));
-                                      }
+                                      await hire();
                                     },
-                                    icon: Center(
-                                      child: Image.asset(
-                                        icons[index],
-                                        width: 30,
-                                        color: white.withOpacity(.8),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(50),
+                                    ),
+                                    child: const Center(
+                                      child: Text(
+                                        "Hire me",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 17,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                                separatorBuilder: (_, index) => const SizedBox(
-                                  width: 5,
-                                ),
-                                itemCount: icons.length,
                               ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Expanded(
-              child: Container(
-                width: width,
-                padding: EdgeInsets.symmetric(
-                  horizontal: width <= 800 ? 30 : width * .1,
-                  vertical: 0,
-                ),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 250,
-                      height: 300,
-                      // color: Colors.red,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: AnimatedFadeWidget(
-                              slideFrom: const Offset(0, 1),
-                              child: SizedBox(
-                                width: double.maxFinite,
-                                child: Text(
-                                  "${diff.inDays ~/ 365}",
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                    fontSize: 325,
-                                    height: .85,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white.withOpacity(.5),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                            } else ...{
+                              const SizedBox(
+                                height: 60,
+                              ),
+                            },
+                            SizedBox(
+                              height: 60,
+                              width: 400,
+                              child: Center(
+                                child: ListView.separated(
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (_, index) => AnimatedFadeWidget(
+                                    duration: Duration(
+                                        milliseconds:
+                                            500 + ((index + 1) * 100)),
+                                    slideFrom: Offset(-(index).toDouble(), -1),
+                                    child: IconButton(
+                                      padding: const EdgeInsets.all(0),
+                                      onPressed: () async {
+                                        if (await canLaunchUrl(
+                                            Uri.parse(links[index]))) {
+                                          await launchUrl(
+                                              Uri.parse(links[index]));
+                                        }
+                                      },
+                                      icon: Center(
+                                        child: Image.asset(
+                                          icons[index],
+                                          width: 30,
+                                          color: white.withOpacity(.8),
+                                        ),
+                                      ),
+                                    ),
                                   ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          const AnimatedFadeWidget(
-                            slideFrom: Offset(0, 1),
-                            duration: Duration(milliseconds: 700),
-                            child: FittedBox(
-                              fit: BoxFit.fitWidth,
-                              child: Text(
-                                "YEARS OF",
-                                style: TextStyle(
-                                  fontSize: 65,
-                                  height: .6,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-
-                          AnimatedFadeWidget(
-                            slideFrom: const Offset(0, 1),
-                            duration: const Duration(milliseconds: 800),
-                            child: FittedBox(
-                              fit: BoxFit.fitWidth,
-                              child: RichText(
-                                text: const TextSpan(
-                                  text: "EXP",
-                                  style: TextStyle(
-                                    color: accent,
-                                    fontSize: 270,
-                                    height: .7,
-                                    fontFamily: "Alumni",
-                                    fontWeight: FontWeight.w900,
+                                  separatorBuilder: (_, index) =>
+                                      const SizedBox(
+                                    width: 5,
                                   ),
-                                  children: [
-                                    TextSpan(
-                                      text: "ERIENCE",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                      ),
-                                    )
-                                  ],
+                                  itemCount: icons.length,
                                 ),
                               ),
                             ),
-                          ),
-                          // Text("EXPERIENCE"),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    Expanded(
-                      child: Container(
-                        // color: Colors.red,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Expanded(
-                              child: AnimatedFadeWidget(
-                                slideFrom: const Offset(0, -1),
-                                child: RichText(
-                                  text: TextSpan(
-                                      text: "IN ",
-                                      style: TextStyle(
-                                        color: Colors.white.withOpacity(.1),
-                                        fontSize: 60,
-                                        height: .45,
-                                        fontWeight: FontWeight.w700,
-                                        fontFamily: "Alumni",
-                                      ),
-                                      children: const [
-                                        TextSpan(
-                                          text: "SOFT",
-                                          style: TextStyle(
-                                            fontSize: 120,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                          text: "WARE",
-                                          style: TextStyle(
-                                            fontSize: 120,
-                                            color: accent,
-                                          ),
-                                        ),
-                                      ]),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: AnimatedFadeWidget(
-                                slideFrom: const Offset(1, 0),
-                                child: RichText(
-                                  text: const TextSpan(
-                                      text: "DEV",
-                                      style: TextStyle(
-                                        color: accent,
-                                        fontSize: 180,
-                                        height: .5,
-                                        fontWeight: FontWeight.w700,
-                                        fontFamily: "Alumni",
-                                      ),
-                                      children: [
-                                        TextSpan(
-                                          text: "ELOPMENT",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ]),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: AnimatedFadeWidget(
-                                slideFrom: const Offset(0, 1),
-                                child: RichText(
-                                  text: const TextSpan(
-                                      text: "INDUS",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 110,
-                                        height: .8,
-                                        fontWeight: FontWeight.w700,
-                                        fontFamily: "Alumni",
-                                      ),
-                                      children: [
-                                        TextSpan(
-                                          text: "TRY",
-                                          style: TextStyle(
-                                            color: accent,
-                                          ),
-                                        ),
-                                      ]),
-                                ),
-                              ),
-                            ),
-
-                            // RichText(
-                            //   text: const TextSpan(
-                            //       text: "INDUS",
-                            //       style: TextStyle(
-                            //         color: accent,
-                            //         fontSize: 120,
-                            //         height: .5,
-                            //         fontWeight: FontWeight.w700,
-                            //         fontFamily: "Alumni",
-                            //       ),
-                            //       children: [
-                            //         TextSpan(
-                            //           text: "TRY",
-                            //           style: TextStyle(
-                            //             color: Colors.white,
-                            //           ),
-                            //         ),
-                            //       ]),
-                            // ),
                           ],
                         ),
                       ),
                     )
                   ],
                 ),
-                // child: Stack(
-                //   children: [
-                //     // Positioned(
-                //     //   top: -10,
-                //     //   child: Column(
-                //     //     children: [
-                // AnimatedFadeWidget(
-                //   slideFrom: const Offset(0, 1),
-                //   child: Text(
-                //     "${diff.inDays ~/ 365}",
-                //     style: TextStyle(
-                //       fontSize: 400,
-                //       fontWeight: FontWeight.w900,
-                //       color: Colors.white.withOpacity(.5),
-                //     ),
-                //   ),
-                // )
-                //     //     ],
-                //     //   ),
-                //     // )
-                //   ],
-                // ),
-                // child: Row(
-                //   children: [
-                //     Expanded(
-                //       flex: 2,
-                //       child: Container(
-                //         // color: Colors.blue,
-                //         child: Stack(
-                //           // alignment: Alignment.center,
-                //           children: [
-                //             Positioned(
-                //               top: -90,
-                // child: AnimatedFadeWidget(
-                //   slideFrom: const Offset(0, 1),
-                //   child: Text(
-                //     "${diff.inDays ~/ 365}",
-                //     style: TextStyle(
-                //       fontSize: 400,
-                //       fontWeight: FontWeight.w900,
-                //       color: Colors.white.withOpacity(.5),
-                //     ),
-                //   ),
-                // ),
-                //             ),
-                //             Positioned(
-                //               top: 65,
-                //               left: 180,
-                //               child: AnimatedFadeWidget(
-                //                 slideFrom: const Offset(0, 1),
-                //                 child: Column(
-                //                   crossAxisAlignment: CrossAxisAlignment.start,
-                //                   children: [
-                //                     Text(
-                //                       "Years Of",
-                //                       style: TextStyle(
-                //                         fontSize: 150,
-                //                         height: .55,
-                //                         fontWeight: FontWeight.w900,
-                //                         color: Colors.white.withOpacity(.2),
-                //                       ),
-                //                     ),
-                //                     Row(
-                //                       children: [
-                // RichText(
-                //   text: const TextSpan(
-                //     text: "EXP",
-                //     style: TextStyle(
-                //       color: accent,
-                //       fontSize: 270,
-                //       height: .56,
-                //       fontFamily: "Alumni",
-                //       fontWeight: FontWeight.w900,
-                //     ),
-                //     children: [
-                //       TextSpan(
-                //         text: "ERIENCE",
-                //         style: TextStyle(
-                //           color: Colors.white,
-                //         ),
-                //       )
-                //     ],
-                //   ),
-                // ),
-                //                         const SizedBox(
-                //                           width: 10,
-                //                         ),
-                //                         Column(
-                //                           crossAxisAlignment:
-                //                               CrossAxisAlignment.start,
-                //                           mainAxisAlignment:
-                //                               MainAxisAlignment.end,
-                //                           children: [
-                //                             Text(
-                //                               "In Software".toUpperCase(),
-                //                               style: TextStyle(
-                //                                 color: Colors.white
-                //                                     .withOpacity(.5),
-                //                                 height: 1,
-                //                                 fontSize: 35,
-                //                               ),
-                //                             ),
-                //                             Text(
-                //                               "DEVELOPMENT INDUSTRY"
-                //                                   .toUpperCase(),
-                //                               style: TextStyle(
-                //                                 fontSize: 45,
-                //                                 height: .7,
-                //                                 fontWeight: FontWeight.w700,
-                //                                 color: Colors.white
-                //                                     .withOpacity(.5),
-                //                               ),
-                //                             ),
-                //                           ],
-                //                         )
-                //                       ],
-                //                     ),
-                //                   ],
-                //                 ),
-                //               ),
-                //             ),
-                //             // Positioned(child: child)
-                //           ],
-                //         ),
-                //       ),
-                //     ),
-                //   ],
-                // ),
+              ),
+            ),
+            Positioned(
+              top: 700,
+              child: Container(
+                width: width,
+                height: 270,
+                // color: Colors.red,
+                padding: EdgeInsets.symmetric(
+                  horizontal: width <= 800 ? 30 : width * .1,
+                  vertical: 0,
+                ),
+                child: LayoutBuilder(builder: (context, cc) {
+                  final double cw = cc.maxWidth;
+                  return Stack(
+                    children: [
+                      if (width >= 650) ...{
+                        Positioned(
+                          left: 0,
+                          bottom: 60,
+                          // bottom: 0,
+                          child: AnimatedFadeWidget(
+                            slideFrom: const Offset(0, -1),
+                            child: Text(
+                              "${diff.inDays ~/ 365}",
+                              style: TextStyle(
+                                fontSize: 220,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white.withOpacity(.5),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 42,
+                          child: AnimatedFadeWidget(
+                              slideFrom: const Offset(0, -1),
+                              duration: const Duration(milliseconds: 700),
+                              child: RichText(
+                                text: TextSpan(
+                                  text: "years ".toUpperCase(),
+                                  style: TextStyle(
+                                    fontFamily: "Alumni",
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.white.withOpacity(1),
+                                    fontSize: 70,
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: "of".toUpperCase(),
+                                      style: const TextStyle(
+                                        color: accent,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              )),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          child: AnimatedFadeWidget(
+                            slideFrom: const Offset(0, 1),
+                            duration: const Duration(milliseconds: 800),
+                            child: RichText(
+                              text: const TextSpan(
+                                text: "EXP",
+                                style: TextStyle(
+                                  color: accent,
+                                  fontSize: 70,
+                                  height: .7,
+                                  fontFamily: "Alumni",
+                                  fontWeight: FontWeight.w900,
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: "ERIENCE",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        // Positioned(
+                        //   left: 0,
+                        //   child: SizedBox(
+                        //     width: 200,
+                        //     height: 300,
+                        //     child: Stack(
+                        //       alignment: Alignment.center,
+                        //       children: [
+                        //         Text(
+                        //           "${diff.inDays ~/ 365}",
+                        //           textAlign: TextAlign.left,
+                        // style: TextStyle(
+                        //   fontSize: 300,
+                        //   fontWeight: FontWeight.w900,
+                        //   color: Colors.white.withOpacity(.5),
+                        // ),
+                        //         ),
+                        //         Text(
+                        //           "Years",
+                        //           style: TextStyle(
+                        //             fontSize: 300,
+                        //             fontWeight: FontWeight.w900,
+                        //             color: Colors.white.withOpacity(.5),
+                        //           ),
+                        //         )
+                        //       ],
+                        //     ),
+                        //   ),
+                        // ),
+                      } else ...{
+                        Column(
+                          children: [
+                            Expanded(
+                              flex: 3,
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  FittedBox(
+                                    fit: BoxFit.fitHeight,
+                                    child: AnimatedFadeWidget(
+                                      slideFrom: const Offset(0, -1),
+                                      child: Text(
+                                        "${diff.inDays ~/ 365}",
+                                        style: TextStyle(
+                                          fontSize: 180,
+                                          // fontFamily: "",
+                                          height: 1,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.white.withOpacity(.5),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 20,
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Expanded(
+                                          child: AnimatedFadeWidget(
+                                              slideFrom: const Offset(0, -1),
+                                              duration: const Duration(
+                                                  milliseconds: 700),
+                                              child: RichText(
+                                                text: TextSpan(
+                                                  text: "years ".toUpperCase(),
+                                                  style: TextStyle(
+                                                    fontFamily: "Alumni",
+                                                    fontWeight: FontWeight.w800,
+                                                    color: Colors.white
+                                                        .withOpacity(1),
+                                                    fontSize: 65,
+                                                  ),
+                                                  children: [
+                                                    TextSpan(
+                                                      text: "of".toUpperCase(),
+                                                      style: const TextStyle(
+                                                        color: accent,
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              )),
+                                        ),
+                                        Expanded(
+                                            child: AnimatedFadeWidget(
+                                          slideFrom: const Offset(0, 1),
+                                          duration:
+                                              const Duration(milliseconds: 800),
+                                          child: RichText(
+                                            text: const TextSpan(
+                                              text: "EXP",
+                                              style: TextStyle(
+                                                color: accent,
+                                                fontSize: 65,
+                                                height: 1,
+                                                fontFamily: "Alumni",
+                                                fontWeight: FontWeight.w900,
+                                              ),
+                                              children: [
+                                                TextSpan(
+                                                  text: "ERIENCE",
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        )),
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                                flex: 4,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Expanded(
+                                      flex: 2,
+                                      child: FittedBox(
+                                        child: AnimatedFadeWidget(
+                                          slideFrom: const Offset(0, -1),
+                                          child: RichText(
+                                            text: TextSpan(
+                                                text: "IN ",
+                                                style: TextStyle(
+                                                  color: Colors.white
+                                                      .withOpacity(.1),
+                                                  fontSize: cw >= 900 ? 60 : 45,
+                                                  height: 1,
+                                                  fontWeight: FontWeight.w700,
+                                                  fontFamily: "Alumni",
+                                                ),
+                                                children: [
+                                                  TextSpan(
+                                                    text: "SOFT",
+                                                    style: TextStyle(
+                                                      fontSize:
+                                                          cw >= 900 ? 120 : 80,
+                                                      color: Colors.white,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text: "WARE",
+                                                    style: TextStyle(
+                                                      fontSize:
+                                                          cw >= 900 ? 120 : 80,
+                                                      color: accent,
+                                                    ),
+                                                  ),
+                                                ]),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                        flex: 3,
+                                        child: FittedBox(
+                                          child: AnimatedFadeWidget(
+                                            slideFrom: const Offset(1, 0),
+                                            child: RichText(
+                                              text: TextSpan(
+                                                text: "DEV",
+                                                style: TextStyle(
+                                                  color: accent,
+                                                  fontSize:
+                                                      cw >= 900 ? 150 : 110,
+                                                  height: 1,
+                                                  fontWeight: FontWeight.w700,
+                                                  fontFamily: "Alumni",
+                                                ),
+                                                children: const [
+                                                  TextSpan(
+                                                    text: "ELOPMENT",
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        )),
+                                    Expanded(
+                                        flex: 2,
+                                        child: Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: FittedBox(
+                                            child: AnimatedFadeWidget(
+                                              slideFrom: const Offset(0, 1),
+                                              child: RichText(
+                                                text: TextSpan(
+                                                    text: "INDUS",
+                                                    style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize:
+                                                          cw >= 900 ? 110 : 70,
+                                                      height: 1,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      fontFamily: "Alumni",
+                                                    ),
+                                                    children: const [
+                                                      TextSpan(
+                                                        text: "TRY",
+                                                        style: TextStyle(
+                                                          color: accent,
+                                                        ),
+                                                      ),
+                                                    ]),
+                                              ),
+                                            ),
+                                          ),
+                                        )),
+                                  ],
+                                )),
+                          ],
+                        )
+                      },
+                      if (width >= 700) ...{
+                        Positioned(
+                          right: 0,
+                          child: AnimatedFadeWidget(
+                            slideFrom: const Offset(0, -1),
+                            child: RichText(
+                              text: TextSpan(
+                                  text: "IN ",
+                                  style: TextStyle(
+                                    color: Colors.white.withOpacity(.1),
+                                    fontSize: cw >= 900 ? 60 : 45,
+                                    height: cw >= 900 ? 1 : 1.5,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: "Alumni",
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: "SOFT",
+                                      style: TextStyle(
+                                        fontSize: cw >= 900 ? 120 : 80,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: "WARE",
+                                      style: TextStyle(
+                                        fontSize: cw >= 900 ? 120 : 80,
+                                        color: accent,
+                                      ),
+                                    ),
+                                  ]),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          right: 0,
+                          top: 70,
+                          child: AnimatedFadeWidget(
+                            slideFrom: const Offset(1, 0),
+                            child: RichText(
+                              text: TextSpan(
+                                text: "DEV",
+                                style: TextStyle(
+                                  color: accent,
+                                  fontSize: cw >= 900 ? 150 : 110,
+                                  height: cw >= 900 ? 1 : 1.1,
+                                  fontWeight: FontWeight.w700,
+                                  fontFamily: "Alumni",
+                                ),
+                                children: const [
+                                  TextSpan(
+                                    text: "ELOPMENT",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          right: 0,
+                          top: 170,
+                          child: AnimatedFadeWidget(
+                            slideFrom: const Offset(0, 1),
+                            child: RichText(
+                              text: TextSpan(
+                                  text: "INDUS",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: cw >= 900 ? 110 : 70,
+                                    height: cw >= 900 ? 1 : .7,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: "Alumni",
+                                  ),
+                                  children: const [
+                                    TextSpan(
+                                      text: "TRY",
+                                      style: TextStyle(
+                                        color: accent,
+                                      ),
+                                    ),
+                                  ]),
+                            ),
+                          ),
+                        ),
+                        // Positioned(
+                        //   right: 0,
+                        //   child: Column(
+                        //     mainAxisAlignment: MainAxisAlignment.center,
+                        //     crossAxisAlignment: CrossAxisAlignment.end,
+                        //     children: [
+
+                        //     ],
+                        //   ),
+                        // )
+                      },
+                    ],
+                  );
+                }),
               ),
             )
+            // Expanded(
+            //   child: Container(
+            //     width: width,
+            // padding: EdgeInsets.symmetric(
+            //   horizontal: width <= 800 ? 30 : width * .1,
+            //   vertical: 0,
+            // ),
+            //     child: Row(
+            //       children: [
+            //         SizedBox(
+            //           width: 250,
+            //           height: 300,
+            //           // color: Colors.red,
+            //           child: Column(
+            //             mainAxisAlignment: MainAxisAlignment.center,
+            //             crossAxisAlignment: CrossAxisAlignment.start,
+            //             children: [
+            //               Expanded(
+            //                 child: AnimatedFadeWidget(
+            //                   slideFrom: const Offset(0, 1),
+            //                   child: SizedBox(
+            //                     width: double.maxFinite,
+            //                     child: Text(
+            //                       "${diff.inDays ~/ 365}",
+            // textAlign: TextAlign.left,
+            // style: TextStyle(
+            //   fontSize: 325,
+            //   height: .85,
+            //   fontWeight: FontWeight.w900,
+            //   color: Colors.white.withOpacity(.5),
+            // ),
+            //                     ),
+            //                   ),
+            //                 ),
+            //               ),
+            //               const AnimatedFadeWidget(
+            //                 slideFrom: Offset(0, 1),
+            //                 duration: Duration(milliseconds: 700),
+            //                 child: FittedBox(
+            //                   fit: BoxFit.fitWidth,
+            //                   child: Text(
+            //                     "YEARS OF",
+            //                     style: TextStyle(
+            //                       fontSize: 65,
+            //                       height: .6,
+            //                       fontWeight: FontWeight.w700,
+            //                       color: Colors.white,
+            //                     ),
+            //                   ),
+            //                 ),
+            //               ),
+
+            //               AnimatedFadeWidget(
+            //                 slideFrom: const Offset(0, 1),
+            //                 duration: const Duration(milliseconds: 800),
+            //                 child: FittedBox(
+            //                   fit: BoxFit.fitWidth,
+            // child: RichText(
+            //   text: const TextSpan(
+            //     text: "EXP",
+            //     style: TextStyle(
+            //       color: accent,
+            //       fontSize: 270,
+            //       height: .7,
+            //       fontFamily: "Alumni",
+            //       fontWeight: FontWeight.w900,
+            //     ),
+            //     children: [
+            //       TextSpan(
+            //         text: "ERIENCE",
+            //         style: TextStyle(
+            //           color: Colors.white,
+            //         ),
+            //       )
+            //     ],
+            //   ),
+            //                   ),
+            //                 ),
+            //               ),
+            //               // Text("EXPERIENCE"),
+            //             ],
+            //           ),
+            //         ),
+            //         const SizedBox(
+            //           width: 40,
+            //         ),
+            //         Expanded(
+            //           child: Container(
+            //             // color: Colors.red,
+            //             child: Column(
+            //               mainAxisAlignment: MainAxisAlignment.center,
+            //               crossAxisAlignment: CrossAxisAlignment.end,
+            //               children: [
+            //                 Expanded(
+            // child: AnimatedFadeWidget(
+            //   slideFrom: const Offset(0, -1),
+            //   child: RichText(
+            //     text: TextSpan(
+            //         text: "IN ",
+            //         style: TextStyle(
+            //           color: Colors.white.withOpacity(.1),
+            //           fontSize: 60,
+            //           height: .45,
+            //           fontWeight: FontWeight.w700,
+            //           fontFamily: "Alumni",
+            //         ),
+            //         children: const [
+            //           TextSpan(
+            //             text: "SOFT",
+            //             style: TextStyle(
+            //               fontSize: 120,
+            //               color: Colors.white,
+            //             ),
+            //           ),
+            //           TextSpan(
+            //             text: "WARE",
+            //             style: TextStyle(
+            //               fontSize: 120,
+            //               color: accent,
+            //             ),
+            //           ),
+            //         ]),
+            //   ),
+            // ),
+            //                 ),
+            //                 Expanded(
+            // child: AnimatedFadeWidget(
+            //   slideFrom: const Offset(1, 0),
+            //   child: RichText(
+            //     text: const TextSpan(
+            //         text: "DEV",
+            //         style: TextStyle(
+            //           color: accent,
+            //           fontSize: 180,
+            //           height: .5,
+            //           fontWeight: FontWeight.w700,
+            //           fontFamily: "Alumni",
+            //         ),
+            //         children: [
+            //           TextSpan(
+            //             text: "ELOPMENT",
+            //             style: TextStyle(
+            //               color: Colors.white,
+            //             ),
+            //           ),
+            //         ]),
+            //   ),
+            // ),
+            //                 ),
+            //                 Expanded(
+            // child: AnimatedFadeWidget(
+            //   slideFrom: const Offset(0, 1),
+            //   child: RichText(
+            //     text: const TextSpan(
+            //         text: "INDUS",
+            //         style: TextStyle(
+            //           color: Colors.white,
+            //           fontSize: 110,
+            //           height: .8,
+            //           fontWeight: FontWeight.w700,
+            //           fontFamily: "Alumni",
+            //         ),
+            //         children: [
+            //           TextSpan(
+            //             text: "TRY",
+            //             style: TextStyle(
+            //               color: accent,
+            //             ),
+            //           ),
+            //         ]),
+            //   ),
+            // ),
+            //                 ),
+
+            //                 // RichText(
+            //                 //   text: const TextSpan(
+            //                 //       text: "INDUS",
+            //                 //       style: TextStyle(
+            //                 //         color: accent,
+            //                 //         fontSize: 120,
+            //                 //         height: .5,
+            //                 //         fontWeight: FontWeight.w700,
+            //                 //         fontFamily: "Alumni",
+            //                 //       ),
+            //                 //       children: [
+            //                 //         TextSpan(
+            //                 //           text: "TRY",
+            //                 //           style: TextStyle(
+            //                 //             color: Colors.white,
+            //                 //           ),
+            //                 //         ),
+            //                 //       ]),
+            //                 // ),
+            //               ],
+            //             ),
+            //           ),
+            //         )
+            //       ],
+            //     ),
+            //     // child: Stack(
+            //     //   children: [
+            //     //     // Positioned(
+            //     //     //   top: -10,
+            //     //     //   child: Column(
+            //     //     //     children: [
+            //     // AnimatedFadeWidget(
+            //     //   slideFrom: const Offset(0, 1),
+            //     //   child: Text(
+            //     //     "${diff.inDays ~/ 365}",
+            //     //     style: TextStyle(
+            //     //       fontSize: 400,
+            //     //       fontWeight: FontWeight.w900,
+            //     //       color: Colors.white.withOpacity(.5),
+            //     //     ),
+            //     //   ),
+            //     // )
+            //     //     //     ],
+            //     //     //   ),
+            //     //     // )
+            //     //   ],
+            //     // ),
+            //     // child: Row(
+            //     //   children: [
+            //     //     Expanded(
+            //     //       flex: 2,
+            //     //       child: Container(
+            //     //         // color: Colors.blue,
+            //     //         child: Stack(
+            //     //           // alignment: Alignment.center,
+            //     //           children: [
+            //     //             Positioned(
+            //     //               top: -90,
+            //     // child: AnimatedFadeWidget(
+            //     //   slideFrom: const Offset(0, 1),
+            //     //   child: Text(
+            //     //     "${diff.inDays ~/ 365}",
+            //     //     style: TextStyle(
+            //     //       fontSize: 400,
+            //     //       fontWeight: FontWeight.w900,
+            //     //       color: Colors.white.withOpacity(.5),
+            //     //     ),
+            //     //   ),
+            //     // ),
+            //     //             ),
+            //     //             Positioned(
+            //     //               top: 65,
+            //     //               left: 180,
+            //     //               child: AnimatedFadeWidget(
+            //     //                 slideFrom: const Offset(0, 1),
+            //     //                 child: Column(
+            //     //                   crossAxisAlignment: CrossAxisAlignment.start,
+            //     //                   children: [
+            //     //                     Text(
+            //     //                       "Years Of",
+            //     //                       style: TextStyle(
+            //     //                         fontSize: 150,
+            //     //                         height: .55,
+            //     //                         fontWeight: FontWeight.w900,
+            //     //                         color: Colors.white.withOpacity(.2),
+            //     //                       ),
+            //     //                     ),
+            //     //                     Row(
+            //     //                       children: [
+            //     // RichText(
+            //     //   text: const TextSpan(
+            //     //     text: "EXP",
+            //     //     style: TextStyle(
+            //     //       color: accent,
+            //     //       fontSize: 270,
+            //     //       height: .56,
+            //     //       fontFamily: "Alumni",
+            //     //       fontWeight: FontWeight.w900,
+            //     //     ),
+            //     //     children: [
+            //     //       TextSpan(
+            //     //         text: "ERIENCE",
+            //     //         style: TextStyle(
+            //     //           color: Colors.white,
+            //     //         ),
+            //     //       )
+            //     //     ],
+            //     //   ),
+            //     // ),
+            //     //                         const SizedBox(
+            //     //                           width: 10,
+            //     //                         ),
+            //     //                         Column(
+            //     //                           crossAxisAlignment:
+            //     //                               CrossAxisAlignment.start,
+            //     //                           mainAxisAlignment:
+            //     //                               MainAxisAlignment.end,
+            //     //                           children: [
+            //     //                             Text(
+            //     //                               "In Software".toUpperCase(),
+            //     //                               style: TextStyle(
+            //     //                                 color: Colors.white
+            //     //                                     .withOpacity(.5),
+            //     //                                 height: 1,
+            //     //                                 fontSize: 35,
+            //     //                               ),
+            //     //                             ),
+            //     //                             Text(
+            //     //                               "DEVELOPMENT INDUSTRY"
+            //     //                                   .toUpperCase(),
+            //     //                               style: TextStyle(
+            //     //                                 fontSize: 45,
+            //     //                                 height: .7,
+            //     //                                 fontWeight: FontWeight.w700,
+            //     //                                 color: Colors.white
+            //     //                                     .withOpacity(.5),
+            //     //                               ),
+            //     //                             ),
+            //     //                           ],
+            //     //                         )
+            //     //                       ],
+            //     //                     ),
+            //     //                   ],
+            //     //                 ),
+            //     //               ),
+            //     //             ),
+            //     //             // Positioned(child: child)
+            //     //           ],
+            //     //         ),
+            //     //       ),
+            //     //     ),
+            //     //   ],
+            //     // ),
+            //   ),
+            // )
           ],
         );
       },
