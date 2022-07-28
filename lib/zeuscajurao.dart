@@ -15,6 +15,11 @@ class ZeusCajurao extends StatelessWidget {
         title: 'Zeus Cajurao',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          scrollbarTheme: ScrollbarThemeData(
+            thickness: MaterialStateProperty.resolveWith((states) => 8),
+            thumbColor: MaterialStateProperty.resolveWith(
+                (states) => Colors.grey.shade300.withOpacity(.5)),
+          ),
           backgroundColor: dark,
           iconTheme: const IconThemeData(
             color: white,
