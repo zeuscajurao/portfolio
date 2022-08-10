@@ -26,9 +26,20 @@ class IntroductionPage extends StatelessWidget {
     },
     {
       "title": "WEB",
-      "description": "Build a cutting-edge web application.",
+      "description":
+          "Cutting edge web application for e-commerce or personal website (just like this).",
       "icon": const Icon(
         Icons.web_outlined,
+        color: accent,
+      ),
+      "level": "INTERMEDIATE",
+    },
+    {
+      "title": "DESKTOP",
+      "description":
+          "No more sharp edges! Build a material designed Desktop application.",
+      "icon": const Icon(
+        Icons.desktop_mac,
         color: accent,
       ),
       "level": "INTERMEDIATE",

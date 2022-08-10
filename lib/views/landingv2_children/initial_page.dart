@@ -301,12 +301,13 @@ class InitialPage extends StatelessWidget {
                         alignment: Alignment.center,
                         children: [
                           Positioned(
-                            top: 20,
-                            left: 45,
+                            top: 10,
+                            left: 25,
                             child: AnimatedFadeWidget(
                               slideFrom: const Offset(0, -1),
                               child: BubbleContainer(
-                                size: 75,
+                                size: 95,
+                                padding: 30,
                                 iconColor: Colors.green.shade400,
                                 assetPath: "assets/icons/laravel_128_black.png",
                                 boxShadow: BoxShadow(
@@ -344,7 +345,8 @@ class InitialPage extends StatelessWidget {
                             child: AnimatedFadeWidget(
                               slideFrom: const Offset(1, 0),
                               child: BubbleContainer(
-                                size: 90,
+                                size: 130,
+                                padding: 40,
                                 iconColor: Colors.purple.shade400,
                                 assetPath: "assets/icons/python.png",
                                 boxShadow: BoxShadow(
@@ -395,6 +397,8 @@ class InitialPage extends StatelessWidget {
                             child: AnimatedFadeWidget(
                               slideFrom: const Offset(-1, 0),
                               child: BubbleContainer(
+                                padding: 50,
+                                size: 150,
                                 iconColor: primary,
                                 assetPath: "assets/icons/pl_dart.png",
                                 boxShadow: BoxShadow(
