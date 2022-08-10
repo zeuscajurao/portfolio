@@ -30,62 +30,50 @@ flutter:
     - assets/images/
 
   fonts:
-    # - family: QuickSand
-    #   fonts:
-    #     - asset: assets/fonts/Quicksand-Light.ttf
-    #       weight: 300
-    #     - asset: assets/fonts/Quicksand-Regular.ttf
-    #       weight: 400
-    #     - asset: assets/fonts/Quicksand-Medium.ttf
-    #       weight: 500
-    #     - asset: assets/fonts/Quicksand-SemiBold.ttf
-    #       weight: 600
-    #     - asset: assets/fonts/Quicksand-Bold.ttf
-    #       weight: 700
-    - family: Alumni
+    - family: M
       fonts:
-        - asset: assets/fonts/AlumniSans-Thin.ttf
+        - asset: assets/font/t.ttf
           weight: 100
-        - asset: assets/fonts/AlumniSans-ThinItalic.ttf
+        - asset: assets/font/ti.ttf
           style: italic
           weight: 100
-        - asset: assets/fonts/AlumniSans-ExtraLight.ttf
+        - asset: assets/font/el.ttf
           weight: 200
-        - asset: assets/fonts/AlumniSans-ExtraLightItalic.ttf
+        - asset: assets/font/eli.ttf
           style: italic
           weight: 200
-        - asset: assets/fonts/AlumniSans-Light.ttf
+        - asset: assets/font/l.ttf
           weight: 300
-        - asset: assets/fonts/AlumniSans-LightItalic.ttf
+        - asset: assets/font/li.ttf
           style: italic
           weight: 300
-        - asset: assets/fonts/AlumniSans-Regular.ttf
+        - asset: assets/font/r.ttf
           weight: 400
-        - asset: assets/fonts/AlumniSans-Italic.ttf
+        - asset: assets/font/ri.ttf
           style: italic
           weight: 400
-        - asset: assets/fonts/AlumniSans-Medium.ttf
+        - asset: assets/font/m.ttf
           weight: 500
-        - asset: assets/fonts/AlumniSans-MediumItalic.ttf
+        - asset: assets/font/mi.ttf
           style: italic
           weight: 500
-        - asset: assets/fonts/AlumniSans-SemiBold.ttf
+        - asset: assets/font/sb.ttf
           weight: 600
-        - asset: assets/fonts/AlumniSans-SemiBoldItalic.ttf
+        - asset: assets/font/sbi.ttf
           style: italic
           weight: 600
-        - asset: assets/fonts/AlumniSans-Bold.ttf
+        - asset: assets/font/bo.ttf
           weight: 700
-        - asset: assets/fonts/AlumniSans-BoldItalic.ttf
+        - asset: assets/font/boi.ttf
           style: italic
           weight: 700
-        - asset: assets/fonts/AlumniSans-ExtraBold.ttf
+        - asset: assets/font/ebo.ttf
           weight: 800
-        - asset: assets/fonts/AlumniSans-ExtraBoldItalic.ttf
+        - asset: assets/font/eboi.ttf
           style: italic
           weight: 800
-        - asset: assets/fonts/AlumniSans-Black.ttf
+        - asset: assets/font/bl.ttf
           weight: 900
-        - asset: assets/fonts/AlumniSans-BlackItalic.ttf
+        - asset: assets/font/bli.ttf
           style: italic
           weight: 900

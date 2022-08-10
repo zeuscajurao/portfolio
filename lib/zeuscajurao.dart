@@ -24,7 +24,7 @@ class ZeusCajurao extends StatelessWidget {
           iconTheme: const IconThemeData(
             color: white,
           ),
-          fontFamily: "Alumni",
+          fontFamily: "M",
           colorScheme:
               ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(
             secondary: accent,
