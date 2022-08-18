@@ -14,6 +14,7 @@ import 'package:zeuscajurao/views/landing_children/works.dart';
 import 'package:zeuscajurao/views/landingv2_children/initial_page.dart';
 import 'package:zeuscajurao/views/landingv2_children/introduction_page.dart';
 import 'package:zeuscajurao/views/landingv2_children/platform_page.dart';
+import 'package:zeuscajurao/views/landingv2_children/services_page.dart';
 import 'package:zeuscajurao/views/landingv2_children/works_page.dart';
 
 class LandingPage extends StatefulWidget {
@@ -71,6 +72,7 @@ class _LandingPageState extends State<LandingPage> {
                     IntroductionPage(),
                     PlatformV2Page(),
                     LatestWorks(),
+                    ServicesV2Page(),
                   ],
                 ),
                 // child: ListView(

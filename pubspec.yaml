@@ -29,7 +29,10 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
-
+    - assets/images/mockups/
+    - assets/images/mockups/car/
+    - assets/images/mockups/shapeyou/
+    - assets/images/mockups/khephren/
   fonts:
     - family: M
       fonts:
